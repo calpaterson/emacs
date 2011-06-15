@@ -8,6 +8,11 @@
 
 ;;; SUITABLE FOR ALL MODES
 
+;; Yasnippet
+(add-to-list 'load-path "~/.emacs.d/yas/")
+(require 'yasnippet-bundle)
+(yas/initialize)
+
 ;; Line numbering
 (require 'linum)
 (global-linum-mode)
