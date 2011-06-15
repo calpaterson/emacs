@@ -68,6 +68,9 @@
 ;; Fill modes
 ; FIXME
 
+;; Egg
+(add-to-list 'load-path "~/.emacs.d/egg/")
+(require 'egg)
 ;;; SPECIAL MAJOR MODE HOOKS
 
 ;; Latex
