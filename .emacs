@@ -2,9 +2,9 @@
 
 ;;; FIXES
 
-;; Fix the colours on the sun machines
-(set-foreground-color "white")
-(set-background-color "black")
+;; ;; Fix the colours on sun machines
+;; (set-foreground-color "white")
+;; (set-background-color "black")
 
 ;;; SUITABLE FOR ALL MODES
 
@@ -63,7 +63,12 @@
 ; FIXME
 
 ;; Colour Themes
-; FIXME
+(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/color-theme.el")
+(require 'color-theme)
+(eval-after-load "color-theme"
+  '(progn
+     (color-theme-initialize)
+     (color-theme-hober)))
 
 ;; Fill modes
 ; FIXME
@@ -71,6 +76,7 @@
 ;; Egg
 (add-to-list 'load-path "~/.emacs.d/egg/")
 (require 'egg)
+
 ;;; SPECIAL MAJOR MODE HOOKS
 
 ;; Latex
