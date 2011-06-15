@@ -83,20 +83,10 @@
 	    (reftex-mode)))
 
 ;; Python
-(add-hook 'python-mode-hook
-	  (lambda ()
-	    (add-to-list 'load-path "~/.emacs.d/python/python-mode-1.0")
-	    (add-to-list 'load-path "~/.emacs.d/python/")
-	    ;; 	    (add-to-list 'load-path "~/.emacs.d/python/pymacs")
-	    ;; 	    (add-to-list 'load-path "~/.emacs.d/python/ropemacs")
-	    ;; 	    (require 'pymacs)
-	    (require 'ipython)
-	    (auto-fill-mode)
-	    ;;	    (pymacs-load "ropemacs" "rope-")
-	    (add-to-list 'auto-mode-alist '("\\.py\\'" . python-mode))
-	    (add-to-list 'interpreter-mode-alist '("python" . python-mode))))
-
-
+(add-to-list 'load-path "~/.emacs.d/")
+(add-to-list 'load-path "~/.emacs.d/pymacs")
+(require 'pymacs)
+(require 'init-python)
 
 ;; Haskell
 ; turn-on-haskell-indent is the bad indentation, turn-on-haskell-indentation is the good...
@@ -125,9 +115,9 @@
 ;; Buffers
 ; Try and be like GNU Screen
 (global-set-key (kbd "C-x C-n") 'next-buffer)
-(global-set-key (kbd "C-x n") 'next-buffer)
+;; (global-set-key (kbd "C-x n") 'next-buffer)
 (global-set-key (kbd "C-x C-p") 'previous-buffer)
-(global-set-key (kbd "C-x p") 'previous-buffer)
+;; (global-set-key (kbd "C-x p") 'previous-buffer)
 (global-set-key (kbd "C-x \"") 'buffer-menu)
 ; A Small Nice Thing to improve deleting words
 ; FIXME: Add more word work things
