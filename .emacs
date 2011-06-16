@@ -71,7 +71,10 @@
      (color-theme-hober)))
 
 ;; Fill modes
-; FIXME
+(add-to-list 'load-path "~/.emacs.d/fill-column-indicator/")
+(require 'fill-column-indicator)
+(set-face-background 'fci-shading "dark gray")
+(set-fill-column 79)
 
 ;; Egg
 (add-to-list 'load-path "~/.emacs.d/egg/")
@@ -98,7 +101,8 @@
 (require 'init-python)
 
 ;; Haskell
-; turn-on-haskell-indent is the bad indentation, turn-on-haskell-indentation is the good...
+; turn-on-haskell-indent is the bad indentation,
+; turn-on-haskell-indentation is the good...
 (add-to-list 'load-path "~/.emacs.d/haskell/haskell-mode-2.4/")
 (add-to-list 'load-path "~/.emacs.d/haskell/")
 (require 'haskell-mode)
