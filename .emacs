@@ -6,7 +6,17 @@
 ;; (set-foreground-color "white")
 ;; (set-background-color "black")
 
+;; Set a sensible fill column
+(setq-default fill-column 79)
+
 ;;; SUITABLE FOR ALL MODES
+
+;; Set the colors correctly
+(setq default-frame-alist
+      (append default-frame-alist
+	      '((foreground-color . "white")
+		(background-color . "Black")
+		(cursor-color . "White"))))
 
 ;; Yasnippet
 (add-to-list 'load-path "~/.emacs.d/yas/")
@@ -54,7 +64,8 @@
 (scroll-bar-mode -1)
 
 ;; Window size
-(if (window-system) (set-frame-size (selected-frame) 132 33))
+(if (window-system)
+    (set-frame-size (selected-frame) 80 27))
 
 ;; Use the emacs server
 (server-start)
@@ -63,18 +74,17 @@
 ; FIXME
 
 ;; Colour Themes
-(add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/color-theme.el")
-(require 'color-theme)
-(eval-after-load "color-theme"
-  '(progn
-     (color-theme-initialize)
-     (color-theme-hober)))
+;; (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/color-theme.el")
+;; (require 'color-theme)
+;; (eval-after-load "color-theme"
+;;   '(progn
+;;      (color-theme-initialize)
+;;      (color-theme-hober)))
 
 ;; Fill modes
 (add-to-list 'load-path "~/.emacs.d/fill-column-indicator/")
 (require 'fill-column-indicator)
-(set-face-background 'fci-shading "dark gray")
-(set-fill-column 79)
+(set-face-background 'fci-shading "Dark Gray")
 
 ;; Egg
 (add-to-list 'load-path "~/.emacs.d/egg/")
