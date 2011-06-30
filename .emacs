@@ -110,6 +110,11 @@
 (require 'pymacs)
 (require 'init-python)
 
+;; Javascript
+(add-to-list 'load-path "~/.emacs.d/javascript/")
+(autoload 'js2-mode "js2" nil t)
+(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
 ;; Haskell
 ; turn-on-haskell-indent is the bad indentation,
 ; turn-on-haskell-indentation is the good...
@@ -165,11 +170,10 @@
 
 
 (custom-set-variables
-
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+  ;; custom-set-variables was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
  '(TeX-PDF-mode t)
  '(auto-compression-mode t nil (jka-compr))
  '(case-fold-search t)
@@ -179,6 +183,7 @@
  '(debug-on-error nil)
  '(default-input-method "rfc1345")
  '(frame-background-mode nil)
+ '(fringe-mode 0 nil (fringe))
  '(global-font-lock-mode t nil (font-lock))
  '(haskell-doc-show-global-types t)
  '(haskell-literate-default (quote bird))
@@ -197,13 +202,15 @@
  '(sql-database "mydb")
  '(sql-electric-stuff nil)
  '(sql-user "cal")
+ '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
+ '(transient-mark-mode (quote (only . t)))
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 (custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
+  ;; custom-set-faces was added by Custom.
+  ;; If you edit it by hand, you could mess it up, so be careful.
+  ;; Your init file should contain only one such instance.
+  ;; If there is more than one, they won't work right.
  )
 
 (put 'upcase-region 'disabled nil)
