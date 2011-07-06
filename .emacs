@@ -158,8 +158,6 @@
 ; FIXME: Add window swapping
 ; FIXME: Window splitting
 ; FIXME: Write a keybinding to delete a window
-(global-set-key (kbd "C-x v") 'split-window-horizontally)
-(global-set-key (kbd "C-x m") 'split-window-vertically)
 (global-set-key (kbd "C-p") 'kill-region)
 (global-set-key (kbd "M-/") 'dabbrev-expand)
 (global-set-key [f11] 'toggle-fullscreen)
