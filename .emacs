@@ -132,6 +132,10 @@
 (setq inferior-haskell-find-project-root nil)
 (add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
 
+;; Crontab
+(add-to-list 'load-path "~/.emacs.d/crontab/")
+(require 'crontab-mode)
+
 ;;; KEYBINDINGS
 
 ;; Keybindings for playing with windowing
