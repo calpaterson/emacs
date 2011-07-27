@@ -11,6 +11,9 @@
 
 ;;; SUITABLE FOR ALL MODES
 
+;; Zone when idle
+(zone-when-idle 300)
+
 ;; Set the colors correctly
 (setq default-frame-alist
       (append default-frame-alist
@@ -135,6 +138,11 @@
 ;; Crontab
 (add-to-list 'load-path "~/.emacs.d/crontab/")
 (require 'crontab-mode)
+
+;; Markup
+(load "~/.emacs.d/nxhtml/autostart.el")
+(setq mumamo-background-colors nil) 
+(add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode))
 
 ;;; KEYBINDINGS
 
