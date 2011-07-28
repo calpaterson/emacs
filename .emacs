@@ -12,7 +12,7 @@
 ;;; SUITABLE FOR ALL MODES
 
 ;; Zone when idle
-(zone-when-idle 300)
+;; (zone-when-idle 300)
 
 ;; Set the colors correctly
 (setq default-frame-alist
@@ -94,6 +94,10 @@
 (require 'egg)
 
 ;;; SPECIAL MAJOR MODE HOOKS
+
+;; Mediawiki
+(add-to-list 'load-path "~/.emacs.d/mediawiki/")
+(require 'mediawiki)
 
 ;; Latex
 (add-hook 'latex-mode-hook
@@ -199,6 +203,8 @@
  '(haskell-literate-default (quote bird))
  '(indent-tabs-mode t)
  '(ipython-command "ipython")
+ '(mediawiki-site-alist (quote (("Wikipedia" "http://en.wikipedia.org/w/" "CalPaterson" "plmoknijb" "Main Page") ("Rangespan" "http://wiki.rangespan.com/w/" "Cal" "pogo sticks" "Main Page"))))
+ '(mediawiki-site-default "Rangespan")
  '(prolog-program-name "/aber/clp8/prolog.sh")
  '(py-python-command "ipython")
  '(py-python-command-args (quote ("-i" "-colors" "Linux")))
