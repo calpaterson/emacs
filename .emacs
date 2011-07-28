@@ -60,7 +60,7 @@
 (column-number-mode t)
 
 ;; Turn on ido-mode
-(ido-mode t)
+;; (ido-mode t)
 
 ;; Hide the tool bar and the scroll bar
 (tool-bar-mode -1) 
@@ -203,7 +203,7 @@
  '(haskell-literate-default (quote bird))
  '(indent-tabs-mode t)
  '(ipython-command "ipython")
- '(mediawiki-site-alist (quote (("Wikipedia" "http://en.wikipedia.org/w/" "CalPaterson" "plmoknijb" "Main Page") ("Rangespan" "http://wiki.rangespan.com/w/" "Cal" "pogo sticks" "Main Page"))))
+ '(mediawiki-site-alist (quote (("Wikipedia" "http://en.wikipedia.org/w/" "CalPaterson" "plmoknijb" "Main Page") ("Rangespan" "http://wiki.rangespan.com/w/" "" "" "Main Page"))))
  '(mediawiki-site-default "Rangespan")
  '(prolog-program-name "/aber/clp8/prolog.sh")
  '(py-python-command "ipython")
