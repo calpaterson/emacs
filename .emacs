@@ -60,7 +60,7 @@
 (column-number-mode t)
 
 ;; Turn on ido-mode
-;; (ido-mode t)
+(ido-mode t)
 
 ;; Hide the tool bar and the scroll bar
 (tool-bar-mode -1) 
@@ -151,37 +151,7 @@
 ;;; KEYBINDINGS
 
 ;; Keybindings for playing with windowing
-(global-set-key (kbd "C-x -") #'shrink-window)
-(global-set-key (kbd "C-x C-_") #'shrink-window-horizontally)
-(global-set-key (kbd "C-x +") #'enlarge-window)
-(global-set-key (kbd "C-x C-+") #'enlarge-window-horizontally)
-(global-set-key (kbd "C-c =") #'balance-windows)
-;; Buffers
-; Try and be like GNU Screen
-(global-set-key (kbd "C-x C-n") 'next-buffer)
-;; (global-set-key (kbd "C-x n") 'next-buffer)
-(global-set-key (kbd "C-x C-p") 'previous-buffer)
-;; (global-set-key (kbd "C-x p") 'previous-buffer)
-(global-set-key (kbd "C-x \"") 'buffer-menu)
-; A Small Nice Thing to improve deleting words
-; FIXME: Add more word work things
-; Don't forget transpose-*
-(global-set-key (kbd "C-w") 'backward-kill-word)
-(global-set-key (kbd "C-x \"") 'list-buffers)
-; FIXME: Window cycling
-;(global-set-key (kbd "C-x 8") 'other-window -1) ;broken
-;(global-set-key (kbd "C-x 9") 'other-window)
-; FIXME: Add window swapping
-; FIXME: Window splitting
-; FIXME: Write a keybinding to delete a window
-(global-set-key (kbd "C-p") 'kill-region)
-(global-set-key (kbd "M-/") 'dabbrev-expand)
 (global-set-key [f11] 'toggle-fullscreen)
-(define-key minibuffer-local-map (kbd "M-/") 'dabbrev-expand)
-; Pasting shortcuts
-(global-set-key (kbd "<C-mouse-2>") #'kill-region)
-(global-set-key (kbd "<C-mouse-3>") #'yank)
-
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
