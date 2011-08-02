@@ -14,6 +14,10 @@
 ;; Zone when idle
 ;; (zone-when-idle 300)
 
+; Use chromium instead of ff
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "chromium-browser")
+
 ;; Set the colors correctly
 (setq default-frame-alist
       (append default-frame-alist
@@ -72,17 +76,6 @@
 
 ;; Use the emacs server
 (server-start)
-
-;; Make C-w delete only string of alphanumeric characters
-; FIXME
-
-;; Colour Themes
-;; (add-to-list 'load-path "~/.emacs.d/color-theme-6.6.0/color-theme.el")
-;; (require 'color-theme)
-;; (eval-after-load "color-theme"
-;;   '(progn
-;;      (color-theme-initialize)
-;;      (color-theme-hober)))
 
 ;; Fill modes
 (add-to-list 'load-path "~/.emacs.d/fill-column-indicator/")
