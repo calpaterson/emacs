@@ -30,6 +30,10 @@
 (require 'yasnippet-bundle)
 (yas/initialize)
 
+;; Dired+
+(add-to-list 'load-path "~/.emacs.d/diredplus/")
+(load-file "~/.emacs.d/diredplus/dired+.el")
+
 ;; Line numbering
 (require 'linum)
 (global-linum-mode)
