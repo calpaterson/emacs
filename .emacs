@@ -92,6 +92,7 @@
 ;; Egg
 (add-to-list 'load-path "~/.emacs.d/egg/")
 (require 'egg)
+(egg-minor-mode)
 
 ;;; SPECIAL MAJOR MODE HOOKS
 
