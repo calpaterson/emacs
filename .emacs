@@ -3,8 +3,8 @@
 ;;; FIXES
 
 ;; ;; Fix the colours on sun machines
-;; (set-foreground-color "white")
-;; (set-background-color "black")
+(set-foreground-color "white")
+(set-background-color "black")
 
 ;; Set a sensible fill column
 (setq-default fill-column 79)
@@ -14,7 +14,10 @@
 ;; Zone when idle
 ;; (zone-when-idle 300)
 
-; Use chromium instead of ff
+;; Make tramp use URL syntax instead of tramp syntax
+(setq tramp-syntax 'url)
+
+;; Use chromium instead of ff
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium-browser")
 
@@ -142,9 +145,9 @@
 (require 'crontab-mode)
 
 ;; Markup
-(load "~/.emacs.d/nxhtml/autostart.el")
-(setq mumamo-background-colors nil) 
-(add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode))
+;; (load "~/.emacs.d/nxhtml/autostart.el")
+;; (setq mumamo-background-colors nil) 
+;; (add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode))
 
 ;;; KEYBINDINGS
 
