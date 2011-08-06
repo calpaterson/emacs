@@ -14,9 +14,6 @@
 ;; Zone when idle
 ;; (zone-when-idle 300)
 
-;; Make tramp use URL syntax instead of tramp syntax
-(setq tramp-syntax 'url)
-
 ;; Use chromium instead of ff
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium-browser")
