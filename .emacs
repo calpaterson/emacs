@@ -123,19 +123,23 @@
 ;; Haskell
 ; turn-on-haskell-indent is the bad indentation,
 ; turn-on-haskell-indentation is the good...
-(add-to-list 'load-path "~/.emacs.d/haskell/haskell-mode-2.4/")
-(add-to-list 'load-path "~/.emacs.d/haskell/")
-(require 'haskell-mode)
-(require 'haskell-indent)
-(require 'inf-haskell)
-(require 'hs-lint)
-(add-hook 'haskell-mode-hook (lambda ()
-                               (turn-on-haskell-indent)
-			       (turn-on-haskell-doc-mode)
-			       (local-set-key "\C-cl" 'hs-lint)))
-; magic for making :cd work inside inferior-haskell
+(load "~/.emacs.d/haskell/haskell-mode-2.8.0/haskell-site-file")
+(add-hook 'haskell-mode-hook 'turn-on-haskell-doc-mode)
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
+;; (add-to-list 'load-path "~/.emacs.d/haskell/haskell-mode-2.4/")
+;; (add-to-list 'load-path "~/.emacs.d/haskell/")
+;; (require 'haskell-mode)
+;; (require 'haskell-indent)
+;; (require 'inf-haskell)
+;; (require 'hs-lint)
+;; (add-hook 'haskell-mode-hook (lambda ()
+;;                                (turn-on-haskell-indent)
+;; 			       (turn-on-haskell-doc-mode)
+;; 			       (local-set-key "\C-cl" 'hs-lint)))
+;; ; magic for making :cd work inside inferior-haskell
 (setq inferior-haskell-find-project-root nil)
-(add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
+;; (add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
 
 ;; Crontab
 (add-to-list 'load-path "~/.emacs.d/crontab/")
