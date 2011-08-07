@@ -154,6 +154,7 @@
 
 ;; Keybindings for playing with windowing
 (global-set-key [f11] 'toggle-fullscreen)
+(global-set-key (kbd "C-x \"") 'list-buffers)
 
 (custom-set-variables
   ;; custom-set-variables was added by Custom.
