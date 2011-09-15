@@ -1,3 +1,4 @@
 .hg/
 emacs-23.3/
 tramp
+*.elc
