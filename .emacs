@@ -68,7 +68,10 @@
 (column-number-mode t)
 
 ;; Turn on ido-mode
-(ido-mode t)
+;; (ido-mode t)
+
+;; Turn on icicles mode
+(icicle-mode t)
 
 ;; Hide the tool bar and the scroll bar
 (tool-bar-mode -1) 
