@@ -71,7 +71,9 @@
 ;; (ido-mode t)
 
 ;; Turn on icicles mode
-(icicle-mode t)
+(add-to-list 'load-path "~/.emacs.d/icicles/")
+(require 'icicles)
+(icicle-mode)
 
 ;; Hide the tool bar and the scroll bar
 (tool-bar-mode -1) 
