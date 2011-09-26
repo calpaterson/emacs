@@ -34,6 +34,10 @@
 (add-to-list 'load-path "~/.emacs.d/diredplus/")
 (load-file "~/.emacs.d/diredplus/dired+.el")
 
+;; Pivotal
+(add-to-list 'load-path "~/.emacs.d/pivotal/")
+(require 'pivotal-tracker)
+
 ;; Line numbering
 (require 'linum)
 (global-linum-mode)
@@ -179,10 +183,12 @@
  '(global-font-lock-mode t nil (font-lock))
  '(haskell-doc-show-global-types t)
  '(haskell-literate-default (quote bird))
+ '(icicle-buffers-ido-like-flag t)
  '(indent-tabs-mode t)
  '(ipython-command "ipython")
- '(mediawiki-site-alist (quote (("Wikipedia" "http://en.wikipedia.org/w/" "CalPaterson" "plmoknijb" "Main Page") ("Rangespan" "http://wiki.rangespan.com/w/" "" "" "Main Page"))))
+ '(mediawiki-site-alist (quote (("Rangespan" "http://wiki.rangespan.com/w/" "" "" "Main Page"))))
  '(mediawiki-site-default "Rangespan")
+ '(pivotal-api-token "09d76e82edc68c74275e85af1c8649ec")
  '(prolog-program-name "/aber/clp8/prolog.sh")
  '(py-python-command "ipython")
  '(py-python-command-args (quote ("-i" "-colors" "Linux")))
