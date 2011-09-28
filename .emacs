@@ -6,6 +6,9 @@
 ;; (set-foreground-color "white")
 ;; (set-background-color "black")
 
+;; Get rid of the splash screen
+(setq inhibit-splash-screen t)
+
 ;; Set a sensible fill column
 (setq-default fill-column 79)
 
