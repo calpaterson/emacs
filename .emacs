@@ -38,6 +38,30 @@
 (add-to-list 'load-path "~/.emacs.d/pivotal/")
 (require 'pivotal-tracker)
 
+;; Gnus
+
+(setq user-mail-address "cal@rangespan.com")
+(setq user-full-name "Cal Paterson")
+
+(require 'gnus)
+
+(setq gnus-select-method '(nnimap "gmail"
+				  (nnimap-address "imap.gmail.com")
+				  (nnimap-server-port 993)
+				  (nnimap-stream ssl)))
+
+(setq gnus-permanently-visible-groups "mail")
+
+(add-to-list 'gnus-secondary-select-methods '(nnml ""))
+
+(setq message-send-mail-function 'smtpmail-send-it
+      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
+      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "cal@rangespan.com" nil))
+      smtpmail-default-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-server "smtp.gmail.com"
+      smtpmail-smtp-service 587
+      smtpmail-local-domain "rangespan.com")
+
 ;; Line numbering
 (require 'linum)
 (global-linum-mode)
