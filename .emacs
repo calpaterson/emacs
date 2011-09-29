@@ -14,6 +14,11 @@
 ;; Zone when idle
 ;; (zone-when-idle 300)
 
+;; Nuclear whitespace mode
+(add-hook 'write-file-hooks (lambda () (if (not indent-tabs-mode)
+          (save-excursion (untabify (point-min) (point-max))
+          (delete-trailing-whitespace)))))
+
 ;; Use chromium instead of ff
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "chromium-browser")
@@ -45,10 +50,11 @@
 
 (require 'gnus)
 
-(setq gnus-select-method '(nnimap "gmail"
-				  (nnimap-address "imap.gmail.com")
-				  (nnimap-server-port 993)
-				  (nnimap-stream ssl)))
+(setq gnus-select-method
+      '(nnimap "gmail"
+	       (nnimap-address "imap.gmail.com")
+	       (nnimap-server-port 993)
+	       (nnimap-stream ssl)))
 
 (setq gnus-permanently-visible-groups "mail")
 
@@ -56,7 +62,6 @@
 
 (setq message-send-mail-function 'smtpmail-send-it
       smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-auth-credentials '(("smtp.gmail.com" 587 "cal@rangespan.com" nil))
       smtpmail-default-smtp-server "smtp.gmail.com"
       smtpmail-smtp-server "smtp.gmail.com"
       smtpmail-smtp-service 587
