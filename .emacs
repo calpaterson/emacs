@@ -17,6 +17,9 @@
 ;; Zone when idle
 ;; (zone-when-idle 300)
 
+;; Set small enough font-lock-mode
+;;(set-face-attribute 'default nil :font "DejaVu Sans Mono 8")
+
 ;; Nuclear whitespace mode
 (add-hook 'write-file-hooks (lambda () (if (not indent-tabs-mode)
           (save-excursion (untabify (point-min) (point-max))
@@ -45,30 +48,6 @@
 ;; Pivotal
 (add-to-list 'load-path "~/.emacs.d/pivotal/")
 (require 'pivotal-tracker)
-
-;; Gnus
-
-(setq user-mail-address "cal@rangespan.com")
-(setq user-full-name "Cal Paterson")
-
-(require 'gnus)
-
-(setq gnus-select-method
-      '(nnimap "gmail"
-	       (nnimap-address "imap.gmail.com")
-	       (nnimap-server-port 993)
-	       (nnimap-stream ssl)))
-
-(setq gnus-permanently-visible-groups "mail")
-
-(add-to-list 'gnus-secondary-select-methods '(nnml ""))
-
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-starttls-credentials '(("smtp.gmail.com" 587 nil nil))
-      smtpmail-default-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-server "smtp.gmail.com"
-      smtpmail-smtp-service 587
-      smtpmail-local-domain "rangespan.com")
 
 ;; Line numbering
 (require 'linum)
@@ -111,13 +90,14 @@
 (require 'icicles)
 (icicle-mode)
 
-;; Hide the tool bar and the scroll bar
-(tool-bar-mode -1) 
-(scroll-bar-mode -1)
+;; Hide the tool bar and the scroll bar FIXME: Disabled because of unity bug
+;(tool-bar-mode -1) 
+;(scroll-bar-mode -1)
 
 ;; Window size
-(if (window-system)
-    (set-frame-size (selected-frame) 80 27))
+;; FIXME
+;;(if (window-system)
+;;    (set-frame-size (selected-frame) 143 67))
 
 ;; Use the emacs server
 (server-start)
@@ -151,15 +131,15 @@
 	    (reftex-mode)))
 
 ;; Python
-(add-to-list 'load-path "~/.emacs.d/")
-(add-to-list 'load-path "~/.emacs.d/pymacs")
-(require 'pymacs)
-(require 'init-python)
+;; (add-to-list 'load-path "~/.emacs.d/")
+;; (add-to-list 'load-path "~/.emacs.d/pymacs")
+;; (require 'pymacs)
+;; (require 'init-python)
 
 ;; Javascript
-(add-to-list 'load-path "~/.emacs.d/javascript/")
-(autoload 'js2-mode "js2" nil t)
-(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+;; (add-to-list 'load-path "~/.emacs.d/javascript/")
+;; (autoload 'js2-mode "js2" nil t)
+;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
 
 ;; Haskell
 ; turn-on-haskell-indent is the bad indentation,
@@ -187,9 +167,7 @@
 (require 'crontab-mode)
 
 ;; Markup
-(load "~/.emacs.d/nxhtml/autostart.el")
-(setq mumamo-background-colors nil) 
-(add-to-list 'auto-mode-alist '("\\.html$" . django-html-mumamo-mode))
+;; (load "~/.emacs.d/nxhtml/autostart.el")
 
 ;;; KEYBINDINGS
 
@@ -218,9 +196,6 @@
  '(icicle-buffers-ido-like-flag t)
  '(indent-tabs-mode t)
  '(ipython-command "ipython")
- '(mediawiki-site-alist (quote (("Rangespan" "http://wiki.rangespan.com/w/" "" "" "Main Page"))))
- '(mediawiki-site-default "Rangespan")
- '(pivotal-api-token "09d76e82edc68c74275e85af1c8649ec")
  '(prolog-program-name "/aber/clp8/prolog.sh")
  '(py-python-command "ipython")
  '(py-python-command-args (quote ("-i" "-colors" "Linux")))
@@ -230,13 +205,12 @@
  '(remote-shell-program "ssh")
  '(safe-local-variable-values (quote ((Syntax . ANSI-Common-Lisp) (Base . 10))))
  '(save-place t nil (saveplace))
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(sql-database "mydb")
  '(sql-electric-stuff nil)
  '(sql-user "cal")
- '(tool-bar-mode nil)
  '(tramp-default-method "ssh")
- '(transient-mark-mode (quote (only . t)))
  '(uniquify-buffer-name-style (quote forward) nil (uniquify)))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
