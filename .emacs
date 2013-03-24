@@ -14,6 +14,9 @@
 
 ;;; SUITABLE FOR ALL MODES
 
+;; Compile
+(global-set-key [f5] 'compile)
+
 ;; Zone when idle
 ;; (zone-when-idle 300)
 
@@ -114,9 +117,10 @@
 
 ;;; SPECIAL MAJOR MODE HOOKS
 
-;; Mediawiki
-(add-to-list 'load-path "~/.emacs.d/mediawiki/")
-(require 'mediawiki)
+;; Nginx
+(add-to-list 'load-path "~/.emacs.d/nginx")
+(require 'nginx-mode)
+(add-to-list 'auto-mode-alist '("[.]nginx$" . nginx-mode))
 
 ;; Latex
 (add-hook 'latex-mode-hook
@@ -131,15 +135,41 @@
 	    (reftex-mode)))
 
 ;; Python
-;; (add-to-list 'load-path "~/.emacs.d/")
-;; (add-to-list 'load-path "~/.emacs.d/pymacs")
+(add-to-list 'load-path "~/.emacs.d/python-mode")
+(require 'python-mode)
+(require 'auto-complete-config)
+(ac-config-default)
+(global-set-key (kbd "C-<right>") 'forward-word)
+(global-set-key (kbd "C-<left>") 'backward-word)
 ;; (require 'pymacs)
-;; (require 'init-python)
+;; (pymacs-load "ropemacs" "rope-")
+;; (autoload 'pymacs-load "pymacs" nil t)
+;; (autoload 'pymacs-eval "pymacs" nil t)
+;; (autoload 'pymacs-apply "pymacs")
+;; (autoload 'pymacs-call "pymacs")
+;; (pymacs-load "bikeemacs" "brm-")
+;; (brm-init)
 
 ;; Javascript
 ;; (add-to-list 'load-path "~/.emacs.d/javascript/")
 ;; (autoload 'js2-mode "js2" nil t)
 ;; (add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+;; Scala
+(add-to-list 'load-path "~/.emacs.d/scala-emacs")
+(require 'scala-mode-auto)
+
+(add-hook 'scala-mode-hook
+	  '(lambda ()
+	     (scala-mode-feature-electric-mode)))
+
+(require 'scala-mode)
+(add-to-list 'auto-mode-alist '("\\.scala$" . scala-mode))
+(add-to-list 'load-path "/home/cal/.emacs.d/ensime_2.9.2-0.9.8.1/elisp")
+(require 'ensime)
+(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+(push "/home/cal/bin/scala-2.9.2/bin" exec-path)
+(push "/home/cal/bin/sbt/bin" exec-path)
 
 ;; Haskell
 ; turn-on-haskell-indent is the bad indentation,
@@ -161,6 +191,18 @@
 ;; ; magic for making :cd work inside inferior-haskell
 (setq inferior-haskell-find-project-root nil)
 ;; (add-to-list 'auto-mode-alist '("\\.hs\\'" . haskell-mode))
+
+;; Cucumber
+(add-to-list 'load-path "~/.emacs.d/cucumber")
+;; ;; optional configurations
+;; ;; default language if .feature doesn't have "# language: fi"
+;; ;(setq feature-default-language "fi")
+;; ;; point to cucumber languages.yml or gherkin i18n.yml to use
+;; ;; exactly the same localization your cucumber uses
+;; ;(setq feature-default-i18n-file "/path/to/gherkin/gem/i18n.yml")
+;; ;; and load feature-mode
+(require 'feature-mode)
+(add-to-list 'auto-mode-alist '("\.feature$" . feature-mode))
 
 ;; Crontab
 (add-to-list 'load-path "~/.emacs.d/crontab/")
@@ -188,6 +230,8 @@
  '(current-language-environment "UTF-8")
  '(debug-on-error nil)
  '(default-input-method "rfc1345")
+ '(flymake-compilation-prevents-syntax-check t)
+ '(flymake-log-level 2)
  '(frame-background-mode nil)
  '(fringe-mode 0 nil (fringe))
  '(global-font-lock-mode t nil (font-lock))
@@ -195,16 +239,16 @@
  '(haskell-literate-default (quote bird))
  '(icicle-buffers-ido-like-flag t)
  '(indent-tabs-mode t)
- '(ipython-command "ipython")
  '(prolog-program-name "/aber/clp8/prolog.sh")
- '(py-python-command "ipython")
- '(py-python-command-args (quote ("-i" "-colors" "Linux")))
  '(py-shell-switch-buffers-on-execute nil)
  '(py-smart-indentation t)
- '(python-python-command "python")
+ '(python-shell-virtualenv-path "/home/cal/src/recall/")
  '(remote-shell-program "ssh")
+ '(ropemacs-completing-read-function (quote completing-read))
  '(safe-local-variable-values (quote ((Syntax . ANSI-Common-Lisp) (Base . 10))))
  '(save-place t nil (saveplace))
+ '(scala-mode-feature:electric-expand-delimiters-list nil)
+ '(scala-mode-feature:electric-on-per-default nil)
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(sql-database "mydb")
