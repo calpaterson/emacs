@@ -1,0 +1,6 @@
+[submodule "egg"]
+        path = egg
+        url = git@github.com:bogolisk/egg.git 
+[submodule "cucumber"]
+        path = cucumber
+        url = git@github.com:michaelklishin/cucumber.el
