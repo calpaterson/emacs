@@ -2,6 +2,16 @@
 
 ;;; FIXES
 
+;; Revert all buffers
+(defun revert-all-buffers ()
+  "Refreshes all open buffers from their respective files."
+  (interactive)
+  (dolist (buf (buffer-list))
+    (with-current-buffer buf
+      (when (and (buffer-file-name) (not (buffer-modified-p)))
+	(revert-buffer t t t) )))
+  (message "Reverted open files."))
+
 ;; ;; Fix the colours on sun machines
 (set-foreground-color "white")
 (set-background-color "black")
@@ -94,8 +104,8 @@
 (icicle-mode)
 
 ;; Hide the tool bar and the scroll bar FIXME: Disabled because of unity bug
-;(tool-bar-mode -1) 
-;(scroll-bar-mode -1)
+;;(tool-bar-mode -1) 
+;;(scroll-bar-mode -1)
 
 ;; Window size
 ;; FIXME
@@ -103,7 +113,7 @@
 ;;    (set-frame-size (selected-frame) 143 67))
 
 ;; Use the emacs server
-(server-start)
+;; (server-start)
 
 ;; Fill modes
 (add-to-list 'load-path "~/.emacs.d/fill-column-indicator/")
